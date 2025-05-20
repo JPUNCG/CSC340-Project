@@ -2,8 +2,7 @@
 > RentalBooking - Find your next vacation stay
 
 ## Team Members
-> Jeethesh Pallinti
-
+> Jeethesh Pallinti\
 > Teo Kim
 
 ## Description 
