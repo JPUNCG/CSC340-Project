@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Renter Home</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <style>
+    body { padding: 20px; }
+    .logo { height: 40px; }
+    .profile-pic { height: 40px; width: 40px; border-radius: 50%; }
+    .filter-section { margin-bottom: 20px; }
+    .house-card img { width: 100%; height: 200px; object-fit: cover; }
+    .amenities { font-size: 0.85rem; color: #6c757d; }
+    .dropdown-checkboxes {
+      position: absolute;
+      background: #fff;
+      border: 1px solid #ccc;
+      max-height: 200px;
+      overflow-y: auto;
+      z-index: 1000;
+      padding: 10px;
+      display: none;
+    }
+    .dropdown-checkboxes label { display: block; }
+    .filter-label { margin-bottom: 5px; font-weight: bold; }
+  </style>
+</head>
+<body>
+    <nav class="d-flex justify-content-between align-items-center mb-4">
+     <div class="d-flex align-items-center">
+        <img src="logo.jpg" alt="Logo" class="logo me-2" />
+        <span class="fs-4 fw-bold">RentalBooking</span>
+     </div>
+     <a href="profile.html"><img src="profile_pic.jpg" alt="Profile" class="profile-pic" /></a>
+    </nav>
+
+  <div class="filter-section">
+    <div class="row g-3">
+      <div class="col-md-3">
+        <label class="filter-label">Location</label>
+        <input class="form-control mb-2" placeholder="City" />
+        <input class="form-control mb-2" placeholder="State" />
+        <input class="form-control" placeholder="Country" />
+      </div>
+
+      <div class="col-md-3">
+        <label class="filter-label">Price ($)</label>
+        <div class="d-flex">
+          <input id="minPrice" class="form-control me-2" type="number" placeholder="Min" />
+          <input id="maxPrice" class="form-control" type="number" placeholder="Max" />
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <label class="filter-label">Square Footage</label>
+        <div class="d-flex">
+          <input id="minSqft" class="form-control me-2" type="number" placeholder="Min" />
+          <input id="maxSqft" class="form-control" type="number" placeholder="Max" />
+        </div>
+      </div>
+
+      <div class="col-md-3 position-relative">
+        <label class="filter-label">Amenities</label>
+        <button id="amenityDropdownBtn" class="form-control text-start">Select Amenities</button>
+        <div id="amenityDropdown" class="dropdown-checkboxes">
+          <label><input type="checkbox" value="Pool"> Pool</label>
+          <label><input type="checkbox" value="Beachfront"> Beachfront</label>
+          <label><input type="checkbox" value="City View"> City View</label>
+          <label><input type="checkbox" value="Modern"> Modern</label>
+          <label><input type="checkbox" value="Free Food"> Free Food</label>
+          <label><input type="checkbox" value="Pet Friendly"> Pet Friendly</label>
+          <label><input type="checkbox" value="Gym Access"> Gym Access</label>
+        </div>
+      </div>
+    </div>
+    <button class="btn btn-primary mt-3" onclick="applyFilters()">Apply Filters</button>
+  </div>
+
+  <div class="row" id="listingContainer">
+  </div>
+
+  <script>
+    const listings = [
+      { img: 'Room images/Image0.jpg', price: 120, sqft: 800, amenities: ['Pool', 'Beachfront'], desc: 'A peaceful retreat near the waves.', address: '123 Seaside Lane' },
+      { img: 'Room images/Image1.jpg', price: 90, sqft: 600, amenities: ['City View', 'Modern'], desc: 'Cozy apartment with a skyline view.', address: '456 Urban Ave' },
+      { img: 'Room images/Image2.jpg', price: 150, sqft: 1000, amenities: ['Beachfront', 'Free Food'], desc: 'Luxurious suite with all-day meals.', address: '789 Ocean Dr' },
+      { img: 'Room images/Image3.jpg', price: 80, sqft: 500, amenities: ['Modern'], desc: 'Minimalist style for smart travelers.', address: '321 Design Blvd' },
+      { img: 'Room images/Image4.jpg', price: 200, sqft: 1200, amenities: ['Pool', 'Modern', 'Pet Friendly'], desc: 'Spacious home for you and pets.', address: '654 Suburbia Ln' },
+      { img: 'Room images/Image5.jpg', price: 110, sqft: 700, amenities: ['Free Food', 'Gym Access'], desc: 'Fit and fed: your dream stay.', address: '888 Fit Dr' },
+      { img: 'Room images/Image6.jpg', price: 95, sqft: 650, amenities: ['City View', 'Free Food'], desc: 'City lights and bites await.', address: '120 Downtown Pl' },
+      { img: 'Room images/Image7.jpg', price: 180, sqft: 1100, amenities: ['Pool', 'Beachfront', 'Modern'], desc: 'Designer beachfront oasis.', address: '901 Luxe Shore Rd' },
+      { img: 'Room images/Image8.jpg', price: 130, sqft: 900, amenities: ['Pet Friendly', 'Gym Access'], desc: 'Pet-approved with a full gym.', address: '234 Fitness St' },
+    ];
+
+    const listingContainer = document.getElementById('listingContainer');
+
+    function renderListings(filtered = listings) {
+      listingContainer.innerHTML = '';
+      filtered.forEach(h => {
+        const card = document.createElement('div');
+        card.className = 'col-md-4 mb-4';
+        card.innerHTML = `
+          <div class="card house-card">
+            <a href="checkout.html"><img src="${h.img}" class="card-img-top" alt="Room"/></a>
+            <div class="card-body">
+              <h5 class="card-title">$${h.price}/night</h5>
+              <p class="card-text mb-1">${h.address}</p>
+              <p class="card-text text-muted small">${h.sqft} sq ft</p>
+              <p class="card-text">${h.desc}</p>
+              <p class="amenities">${h.amenities.join(', ')}</p>
+            </div>
+          </div>
+        `;
+        listingContainer.appendChild(card);
+      });
+    }
+
+    function applyFilters() {
+      const minPrice = parseInt(document.getElementById('minPrice').value) || 0;
+      const maxPrice = parseInt(document.getElementById('maxPrice').value) || Infinity;
+      const minSqft = parseInt(document.getElementById('minSqft').value) || 0;
+      const maxSqft = parseInt(document.getElementById('maxSqft').value) || Infinity;
+      const checkedAmenities = Array.from(document.querySelectorAll('#amenityDropdown input:checked')).map(i => i.value);
+
+      const filtered = listings.filter(h => {
+        const priceInRange = h.price >= minPrice && h.price <= maxPrice;
+        const sqftInRange = h.sqft >= minSqft && h.sqft <= maxSqft;
+        const hasAllAmenities = checkedAmenities.every(am => h.amenities.includes(am));
+        return priceInRange && sqftInRange && hasAllAmenities;
+      });
+
+      renderListings(filtered);
+    }
+
+    const amenityBtn = document.getElementById('amenityDropdownBtn');
+    const amenityMenu = document.getElementById('amenityDropdown');
+
+    amenityBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      amenityMenu.style.display = amenityMenu.style.display === 'block' ? 'none' : 'block';
+    });
+
+    document.addEventListener('click', () => {
+      amenityMenu.style.display = 'none';
+    });
+
+    amenityMenu.addEventListener('click', e => e.stopPropagation());
+
+    renderListings();
+  </script>
+</body>
+</html>
