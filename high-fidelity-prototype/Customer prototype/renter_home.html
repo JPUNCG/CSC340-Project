@@ -27,13 +27,13 @@
   </style>
 </head>
 <body>
-    <nav class="d-flex justify-content-between align-items-center mb-4">
-     <div class="d-flex align-items-center">
-        <img src="logo.jpg" alt="Logo" class="logo me-2" />
-        <span class="fs-4 fw-bold">RentalBooking</span>
-     </div>
-     <a href="profile.html"><img src="profile_pic.jpg" alt="Profile" class="profile-pic" /></a>
-    </nav>
+  <nav class="d-flex justify-content-between align-items-center mb-4">
+    <div class="d-flex align-items-center">
+      <img src="../logo.jpg" alt="Logo" class="logo me-2" />
+      <span class="fs-4 fw-bold">RentalBooking</span>
+    </div>
+    <a href="renter_profile.html"><img src="../profile_pic.jpg" alt="Profile" class="profile-pic" /></a>
+  </nav>
 
   <div class="filter-section">
     <div class="row g-3">
@@ -77,20 +77,19 @@
     <button class="btn btn-primary mt-3" onclick="applyFilters()">Apply Filters</button>
   </div>
 
-  <div class="row" id="listingContainer">
-  </div>
+  <div class="row" id="listingContainer"></div>
 
   <script>
     const listings = [
-      { img: 'Room images/Image0.jpg', price: 120, sqft: 800, amenities: ['Pool', 'Beachfront'], desc: 'A peaceful retreat near the waves.', address: '123 Seaside Lane' },
-      { img: 'Room images/Image1.jpg', price: 90, sqft: 600, amenities: ['City View', 'Modern'], desc: 'Cozy apartment with a skyline view.', address: '456 Urban Ave' },
-      { img: 'Room images/Image2.jpg', price: 150, sqft: 1000, amenities: ['Beachfront', 'Free Food'], desc: 'Luxurious suite with all-day meals.', address: '789 Ocean Dr' },
-      { img: 'Room images/Image3.jpg', price: 80, sqft: 500, amenities: ['Modern'], desc: 'Minimalist style for smart travelers.', address: '321 Design Blvd' },
-      { img: 'Room images/Image4.jpg', price: 200, sqft: 1200, amenities: ['Pool', 'Modern', 'Pet Friendly'], desc: 'Spacious home for you and pets.', address: '654 Suburbia Ln' },
-      { img: 'Room images/Image5.jpg', price: 110, sqft: 700, amenities: ['Free Food', 'Gym Access'], desc: 'Fit and fed: your dream stay.', address: '888 Fit Dr' },
-      { img: 'Room images/Image6.jpg', price: 95, sqft: 650, amenities: ['City View', 'Free Food'], desc: 'City lights and bites await.', address: '120 Downtown Pl' },
-      { img: 'Room images/Image7.jpg', price: 180, sqft: 1100, amenities: ['Pool', 'Beachfront', 'Modern'], desc: 'Designer beachfront oasis.', address: '901 Luxe Shore Rd' },
-      { img: 'Room images/Image8.jpg', price: 130, sqft: 900, amenities: ['Pet Friendly', 'Gym Access'], desc: 'Pet-approved with a full gym.', address: '234 Fitness St' },
+      { img: '../Room images/Image0.jpg', price: 120, sqft: 800, amenities: ['Pool', 'Beachfront'], desc: 'A peaceful retreat near the waves.', address: '123 Seaside Lane' },
+      { img: '../Room images/Image1.jpg', price: 90, sqft: 600, amenities: ['City View', 'Modern'], desc: 'Cozy apartment with a skyline view.', address: '456 Urban Ave' },
+      { img: '../Room images/Image2.jpg', price: 150, sqft: 1000, amenities: ['Beachfront', 'Free Food'], desc: 'Luxurious suite with all-day meals.', address: '789 Ocean Dr' },
+      { img: '../Room images/Image3.jpg', price: 80, sqft: 500, amenities: ['Modern'], desc: 'Minimalist style for smart travelers.', address: '321 Design Blvd' },
+      { img: '../Room images/Image4.jpg', price: 200, sqft: 1200, amenities: ['Pool', 'Modern', 'Pet Friendly'], desc: 'Spacious home for you and pets.', address: '654 Suburbia Ln' },
+      { img: '../Room images/Image5.jpg', price: 110, sqft: 700, amenities: ['Free Food', 'Gym Access'], desc: 'Fit and fed: your dream stay.', address: '888 Fit Dr' },
+      { img: '../Room images/Image6.jpg', price: 95, sqft: 650, amenities: ['City View', 'Free Food'], desc: 'City lights and bites await.', address: '120 Downtown Pl' },
+      { img: '../Room images/Image7.jpg', price: 180, sqft: 1100, amenities: ['Pool', 'Beachfront', 'Modern'], desc: 'Designer beachfront oasis.', address: '901 Luxe Shore Rd' },
+      { img: '../Room images/Image8.jpg', price: 130, sqft: 900, amenities: ['Pet Friendly', 'Gym Access'], desc: 'Pet-approved with a full gym.', address: '234 Fitness St' },
     ];
 
     const listingContainer = document.getElementById('listingContainer');
@@ -102,7 +101,7 @@
         card.className = 'col-md-4 mb-4';
         card.innerHTML = `
           <div class="card house-card">
-            <a href="checkout.html"><img src="${h.img}" class="card-img-top" alt="Room"/></a>
+            <a href="../checkout.html"><img src="${h.img}" class="card-img-top" alt="Room"/></a>
             <div class="card-body">
               <h5 class="card-title">$${h.price}/night</h5>
               <p class="card-text mb-1">${h.address}</p>
