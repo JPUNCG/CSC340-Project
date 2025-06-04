@@ -21,8 +21,6 @@ Table of Contents
 | Name | Date    | Reason For Changes  | Version   |
 | ---- | ------- | ------------------- | --------- |
 |JP&TK |   6/4   | Initial Design      |     1     |
-|      |         |                     |           |
-|      |         |                     |           |
 
 ## 1. Product Overview
 RentalBooking is a simple application for verified customers and providers to list and rent homes. Providers list properties, include images, price, amenities and other details. Customers are able to filter the listings by the providers, rent the properties and review them afterwards.
