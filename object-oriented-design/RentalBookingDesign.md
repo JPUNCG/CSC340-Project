@@ -41,19 +41,21 @@ A provider shall be to modify their profile by going to their profile page. They
 ##### 2.2.1.4 Create Home
 The provider shall be able to create a new house listing. They would provide an address, images, description, tags.
 ##### 2.2.1.4 Manage Rental
-A Provider shall be able to add and remove homes, as well as read reviews for thier homes.
+A Provider shall be able to add, edit and remove homes, as well as read reviews for their homes.
 
 #### 2.2.2 Actor: Renter
 ##### 2.2.2.1 Sign Up
 A Renter can sign up to create their profile with their name, email, password, and bio. Emails must be unique.
 ##### 2.2.2.2 Log In
 A Renter shall be able to sign in using their registred email and password. After logging in, the Renter shall be directed their dashboard where they see a list of homes and filters.
-##### 2.2.2.3 Browse Homes
+##### 2.2.1.3 Update Profile
+A Renter shall be to modify their profile by going to their profile page. They can change their email, password, profile picture, and biography.
+##### 2.2.2.4 Browse Homes
 A Renter shall be able to view available Homes. They can do this from the home page or using a search function. They can also filter homes by location, tags, and price. They will also be able to select a home and view more details.
-##### 2.2.1.4 Rent Home
+##### 2.2.1.5 Rent Home
 Upon selecting a home, a renter will be able to check it out. This home will then appear on their profile, and they will be able to review the home.
-##### 2.2.1.5 Review Home
-A Renter may review a home from thier profile.
+##### 2.2.1.6 Review Home
+A Renter may review a home from their profile.
 
 ## 3. UML Class Diagram
 ![UML Class Diagram](https://github.com/JPUNCG/CSC340-Project/blob/7374cf3ceaf8b53473ef65f883fc160daa8dd536/object-oriented-design/Class%20diagram.jpg)
