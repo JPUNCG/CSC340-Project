@@ -27,7 +27,7 @@ RentalBooking is a simple application for verified customers and providers to li
 
 ## 2. Use Cases
 ### 2.1 Use Case Model
-![Use Case Model](https://github.com/JPUNCG/CSC340-Project/blob/main/object-oriented-design/Use-case-diagram.png)
+![Use Case Model](https://github.com/JPUNCG/CSC340-Project/blob/7374cf3ceaf8b53473ef65f883fc160daa8dd536/object-oriented-design/Use%20case%20diagram.png)
 
 ### 2.2 Use Case Descriptions
 
@@ -56,7 +56,7 @@ Upon selecting a home, a renter will be able to check it out. This home will the
 A Renter may review a home from thier profile.
 
 ## 3. UML Class Diagram
-![UML Class Diagram](https://github.com/JPUNCG/CSC340-Project/blob/main/object-oriented-design/Class-diagram.png)
+![UML Class Diagram](https://github.com/JPUNCG/CSC340-Project/blob/7374cf3ceaf8b53473ef65f883fc160daa8dd536/object-oriented-design/Class%20diagram.jpg)
 ## 4. Database Schema
-![UML Database Schema](https://github.com/uncg-csc340/su25-team0/blob/main/object-oriented-design/Database-scheme.png)
+![UML Database Schema](https://github.com/JPUNCG/CSC340-Project/blob/7374cf3ceaf8b53473ef65f883fc160daa8dd536/object-oriented-design/Database%20scheme.png)
 
