@@ -35,10 +35,15 @@ RentalBooking is a simple application for verified customers and providers to li
 
 #### 2.2.1 Actor: Provider
 ##### 2.2.1.1 Sign Up
+A Provider can sign up to create their profile with their name, email, password, and bio. Emails must be unique.
 ##### 2.2.1.2 Log In
+A provider shall be able to sign in using their registred email and password. After logging in, the provider shall be directed their dashboard where they see an overview of their homes, reviews and stats.
 ##### 2.2.1.3 Update Profile
+A provider shall be to modify their profile by going to their profile page. They can change their email, password, profile picture, and biography.
 ##### 2.2.1.4 Create Home
+The provider shall be able to create a new house listing. They would provide an address, images, description, tags.
 ##### 2.2.1.4 Manage Rental
+A Provider shall be able to add and remove homes, as well as read reviews for thier homes.
 
 #### 2.2.2 Actor: Renter
 ##### 2.2.2.1 Sign Up
