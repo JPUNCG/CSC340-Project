@@ -1,7 +1,5 @@
 package com.JPUNCG.backend_api.Property;
 
-import com.JPUNCG.backend_api.Property.Property;
-import com.JPUNCG.backend_api.Property.PropertyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -17,6 +15,11 @@ public class PropertyController {
     @GetMapping
     public List<Property> getAllPropertys() {
         return propertyService.getAllPropertys();
+    }
+    
+    @GetMapping("/provider/{providerId}")
+    public List<Property> getPropertiesByProviderId(@PathVariable Long providerId) {
+        return propertyService.getPropertiesByProviderId(providerId);
     }
 
     @PostMapping

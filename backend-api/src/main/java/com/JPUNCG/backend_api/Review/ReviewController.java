@@ -1,7 +1,5 @@
 package com.JPUNCG.backend_api.Review;
 
-import com.JPUNCG.backend_api.Review.Review;
-import com.JPUNCG.backend_api.Review.ReviewService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -23,6 +21,12 @@ public class ReviewController {
     public Review createReview(@RequestBody Review review) {
         return reviewService.createReview(review);
     }
+    
+    @GetMapping("/property/{propertyId}")
+    public List<Review> getReviewsByPropertyId(@PathVariable Long propertyId) {
+        return reviewService.getReviewsByPropertyId(propertyId);
+    }
+
 
     @DeleteMapping("/{id}")
     public void deleteReview(@PathVariable Long id) {

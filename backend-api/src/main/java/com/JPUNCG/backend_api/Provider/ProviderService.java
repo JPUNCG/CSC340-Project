@@ -1,8 +1,5 @@
 package com.JPUNCG.backend_api.Provider;
 
-import com.JPUNCG.backend_api.Provider.Provider;
-import com.JPUNCG.backend_api.Renter.Renter;
-import com.JPUNCG.backend_api.Provider.ProviderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -1,7 +1,5 @@
 package com.JPUNCG.backend_api.Property;
 
-import com.JPUNCG.backend_api.Property.Property;
-import com.JPUNCG.backend_api.Property.PropertyRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,6 +13,10 @@ public class PropertyService {
 
     public List<Property> getAllPropertys() {
         return propertyRepository.findAll();
+    }
+    
+    public List<Property> getPropertiesByProviderId(Long providerId) {
+        return propertyRepository.findByProviderId(providerId);
     }
 
     public Property createProperty(Property property) {

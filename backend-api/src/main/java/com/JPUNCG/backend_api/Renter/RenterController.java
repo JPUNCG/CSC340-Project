@@ -1,7 +1,5 @@
 package com.JPUNCG.backend_api.Renter;
 
-import com.JPUNCG.backend_api.Renter.Renter;
-import com.JPUNCG.backend_api.Renter.RenterService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

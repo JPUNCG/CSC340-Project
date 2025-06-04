@@ -1,7 +1,5 @@
 package com.JPUNCG.backend_api.Booking;
 
-import com.JPUNCG.backend_api.Booking.Booking;
-import com.JPUNCG.backend_api.Booking.BookingRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,6 +15,9 @@ public class BookingService {
         return bookingRepository.findAll();
     }
 
+    public List<Booking> getBookingsByPropertyId(Long propertyId) {
+        return bookingRepository.findByPropertyId(propertyId);
+    }
     public Booking createBooking(Booking booking) {
         return bookingRepository.save(booking);
     }

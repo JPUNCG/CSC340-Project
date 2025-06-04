@@ -1,7 +1,5 @@
 package com.JPUNCG.backend_api.Review;
 
-import com.JPUNCG.backend_api.Review.Review;
-import com.JPUNCG.backend_api.Review.ReviewRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,6 +13,10 @@ public class ReviewService {
 
     public List<Review> getAllReviews() {
         return reviewRepository.findAll();
+    }
+
+    public List<Review> getReviewsByPropertyId(Long propertyId) {
+        return reviewRepository.findByPropertyId(propertyId);
     }
 
     public Review createReview(Review review) {

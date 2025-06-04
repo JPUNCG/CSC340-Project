@@ -1,7 +1,5 @@
 package com.JPUNCG.backend_api.Booking;
 
-import com.JPUNCG.backend_api.Booking.Booking;
-import com.JPUNCG.backend_api.Booking.BookingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -22,6 +20,11 @@ public class BookingController {
     @PostMapping
     public Booking createBooking(@RequestBody Booking booking) {
         return bookingService.createBooking(booking);
+    }
+
+    @GetMapping("/property/{propertyId}")
+    public List<Booking> getBookingsByPropertyId(@PathVariable Long propertyId) {
+        return bookingService.getBookingsByPropertyId(propertyId);
     }
 
     @DeleteMapping("/{id}")

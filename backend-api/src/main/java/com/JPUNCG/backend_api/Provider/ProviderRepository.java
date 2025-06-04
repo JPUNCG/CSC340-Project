@@ -1,6 +1,5 @@
 package com.JPUNCG.backend_api.Provider;
 
-import com.JPUNCG.backend_api.Provider.Provider;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

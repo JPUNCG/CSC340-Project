@@ -1,7 +1,5 @@
 package com.JPUNCG.backend_api.Renter;
 
-import com.JPUNCG.backend_api.Renter.Renter;
-import com.JPUNCG.backend_api.Renter.RenterRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
