@@ -15,6 +15,10 @@ public class ReviewService {
         return reviewRepository.findAll();
     }
 
+    public List<Review> getReviewsByRenterId(Long renterId) {
+        return reviewRepository.findByRenterId(renterId);
+    }
+
     public List<Review> getReviewsByPropertyId(Long propertyId) {
         return reviewRepository.findByPropertyId(propertyId);
     }

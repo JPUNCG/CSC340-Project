@@ -19,6 +19,9 @@ public class ProviderService {
         return providerRepository.findByUsernameAndPassword(username, password).isPresent();
     }
 
+    public Provider getProviderById(Long id) {
+        return providerRepository.findById(id).orElse(null);
+    }
     public Provider getProviderByUsernameAndPassword(String username, String password) {
         return providerRepository.findByUsernameAndPassword(username, password).orElse(null);
     }
