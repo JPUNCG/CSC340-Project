@@ -15,9 +15,14 @@ public class BookingService {
         return bookingRepository.findAll();
     }
 
+    public List<Booking> getBookingsByRenterId(Long renterId) {
+        return bookingRepository.findByRenterId(renterId);
+    }
+
     public List<Booking> getBookingsByPropertyId(Long propertyId) {
         return bookingRepository.findByPropertyId(propertyId);
     }
+
     public Booking createBooking(Booking booking) {
         return bookingRepository.save(booking);
     }

@@ -22,6 +22,10 @@ public class RenterService {
     public boolean verifyLogin(String username, String password) {
         return renterRepository.findByUsernameAndPassword(username, password).isPresent();
     }
+    
+    public Renter getRenterById(Long id) {
+        return renterRepository.findById(id).orElse(null);
+    }
 
     public Renter getRenterByUsernameAndPassword(String username, String password) {
         return renterRepository.findByUsernameAndPassword(username, password).orElse(null);
