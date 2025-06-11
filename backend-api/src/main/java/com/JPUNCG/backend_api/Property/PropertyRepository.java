@@ -7,4 +7,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface PropertyRepository extends JpaRepository<Property, Long> {
     List<Property> findByProviderId(Long providerId);
+
+    List<Property> findByPriceBetweenAndSqftBetween(int minPrice, int maxPrice, int minSqft, int maxSqft);
 }

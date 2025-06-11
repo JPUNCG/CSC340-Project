@@ -18,36 +18,16 @@ public class Property {
     private String description;
     private String tags;
     private Long providerId;
-    private int price;
-    private int sqft;
 
     public Property() {
     }
 
-    public Property(String images, String description, String tags, Long propertyId, Long providerId, int price, int sqft) {
+    public Property(String images, String description, String tags, Long propertyId, Long providerId) {
         this.images = images;
         this.description = description;
         this.tags = tags;
         this.propertyId = propertyId;
         this.providerId = providerId;
-        this.price = price;
-        this.sqft = sqft;
-    }
-
-    public int getPrice() {
-        return price;
-    }
-
-    public void setPrice(int price) {
-        this.price = price;
-    }
-
-    public int getSqft() {
-        return sqft;
-    }
-
-    public void setSqft(int sqft) {
-        this.sqft = sqft;
     }
 
     public String getImages() {
