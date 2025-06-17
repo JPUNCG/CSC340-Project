@@ -31,6 +31,18 @@ public class RenterService {
         return renterRepository.findByUsernameAndPassword(username, password).orElse(null);
     }
 
+    public Renter updateRenter(Long id, Renter renterDetails) {
+        Renter renter = renterRepository.findById(id).orElse(null);
+        if (renter != null) {
+            renter.setUsername(renterDetails.getUsername());
+            renter.setPassword(renterDetails.getPassword());
+            renter.setBio(renterDetails.getBio());
+            renter.setProfilePicture(renterDetails.getProfilePicture());
+            return renterRepository.save(renter);
+        }
+        return null;
+    }
+
     public void deleteRenter(Long id) {
         renterRepository.deleteById(id);
     }

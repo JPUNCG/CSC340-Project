@@ -7,30 +7,50 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
 </head>
 <body class="container pt-4">
-    <div class="profile-section d-flex align-items-center mb-4">
-        <img src="${renter.profilePicture}" alt="Profile Picture" class="me-3 rounded-circle" style="width:100px; height:100px;"/>
-        <div>
-            <h4>${renter.username}</h4>
-            <p>${renter.bio}</p>
-            <a href="/renter/home/${renter.renterId}" class="btn btn-secondary mt-2">Back to Home</a>
-        </div>
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h3>Edit Your Profile</h3>
+        <a href="/renter/home/${renter.renterId}" class="btn btn-secondary">Back to Home</a>
     </div>
+
+    <form action="/renter/update/${renter.renterId}" method="post" class="mb-5">
+        <div class="row">
+            <div class="col-md-2">
+                <img src="${renter.profilePicture}" alt="Profile Picture" class="img-thumbnail mb-2"/>
+            </div>
+            <div class="col-md-10">
+                <div class="mb-3">
+                    <label class="form-label">Username</label>
+                    <input type="text" name="username" class="form-control" value="${renter.username}">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Password</label>
+                    <input type="password" name="password" class="form-control" value="${renter.password}">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Profile Picture URL</label>
+                    <input type="text" name="profilePicture" class="form-control" value="${renter.profilePicture}">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Bio</label>
+                    <textarea name="bio" class="form-control" rows="3">${renter.bio}</textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Save Changes</button>
+            </div>
+        </div>
+    </form>
+
+    <hr/>
 
     <h5>Your Bookings</h5>
     <#if bookings?has_content>
         <#list bookings as booking>
             <div class="border p-3 mb-3">
                 <p><strong>Property ID:</strong> ${booking.propertyId} | <strong>Status:</strong> ${booking.status}</p>
-                
                 <form action="/review/create" method="post" class="mt-2">
                     <input type="hidden" name="propertyId" value="${booking.propertyId}" />
                     <input type="hidden" name="renterId" value="${renter.renterId}" />
-                    <div class="mb-2">
-                        <input type="number" name="rating" class="form-control" placeholder="Rating (1-5)" min="1" max="5" required />
-                    </div>
-                    <div class="mb-2">
-                        <textarea name="description" class="form-control" placeholder="Write your review..." required></textarea>
-                    </div>
+                    <div class="mb-2"><input type="number" name="rating" class="form-control" placeholder="Rating (1-5)" min="1" max="5" required /></div>
+                    <div class="mb-2"><textarea name="description" class="form-control" placeholder="Write your review..." required></textarea></div>
                     <button type="submit" class="btn btn-sm btn-primary">Submit Review</button>
                 </form>
             </div>
