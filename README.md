@@ -21,5 +21,5 @@
     4. Reply to reviews - Providers can reply to customer reviews.
 
 ## Running instructions
-> In application.properties enter your spring.datasource.url
+> In application.properties enter your spring.datasource.url, it must be a sql database private key
 > Run the backendApiApplication.java file
