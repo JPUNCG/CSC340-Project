@@ -19,3 +19,7 @@
     2. Create services - List properties.
     3. View customer statistics -  Average vacancy time, revenue, review averages.
     4. Reply to reviews - Providers can reply to customer reviews.
+
+## Running instructions
+> In application.properties enter your spring.datasource.url
+> Run the backendApiApplication.java file
