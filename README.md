@@ -21,5 +21,5 @@
     4. View reviews - Providers view customer reviews.
 
 ## Running instructions
-> In application.properties enter your spring.datasource.url, it must be a sql database private key
+> In application.properties enter your spring.datasource.url, it must be a sql database private key\
 > Run the backendApiApplication.java file
