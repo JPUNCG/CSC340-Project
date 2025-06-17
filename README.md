@@ -11,14 +11,14 @@
 ## App Functions
 1. Customer (Renter):
     1. Create/modify customer profile - Register as a renter.
-    2. View available services - view and filter avalible properties.
+    2. View available services - view and filter available properties.
     3. Subscribe to available services - checkout properties.
     4. Write reviews for subscribed services - review properties after renting.
 2. Provider (Provider):
     1. Create/modify/remove provider profile - Register as a provider.
     2. Create services - List properties.
-    3. View customer statistics -  Average vacancy time, revenue, review averages.
-    4. Reply to reviews - Providers can reply to customer reviews.
+    3. Update services - able to update, sqft, price, bio, property picture.
+    4. View reviews - Providers view customer reviews.
 
 ## Running instructions
 > In application.properties enter your spring.datasource.url, it must be a sql database private key
